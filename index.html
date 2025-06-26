@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha de CSS - DIO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="banner">
+    <div class="banner-content">
+      <div class="logo">
+        <img src="assets/images/logo.png" title="Logotipo Trilha de CSS DIO" alt="Logotipo Trilha de CSS DIO">
+      </div>
+      <h1>TRILHA DE CSS DA DIO</h1>
+      <p>A nova Trilha de CSS da DIO está disponível.<br>Acesse já e aprenda do zero como desenvolver sites profissionais.</p>
+      <button>QUERO ME INSCREVER</button>
+    </div>
+  </header>
+  <main>
+    <section id="course-content">
+      <h2>O que vou aprender?</h2>
+      <p>
+        Temos 3 módulos recheados de conteúdos do básico ao avançado para que você aprenda a 
+        desenvolver sites profissionais utilizando somente HTML e CSS: sem nenhuma biblioteca ou framework a mais.
+      </p>
+      <div class="modules-list">
+        <div class="module">
+          <span>Módulo 01</span>: primeiros passos com CSS
+        </div>
+        <div class="module">
+          <span>Módulo 02</span>: trabalhando com layouts no CSS
+        </div>
+        <div class="module">
+          <span>Módulo 03</span>: refinando os estilos CSS das nossas páginas
+        </div>
+      </div>
+    </section>
+    <section id="transform-world">
+      <svg class="spark-svg" width="100%" height="560" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:560px;z-index:10;pointer-events:none;">
+        <rect x="0" y="0" width="900" height="560" rx="32" fill="none" stroke="#33A8DB" stroke-width="2" />
+        <path id="spark-path" d="M32,0 H868 Q900,0 900,32 V528 Q900,560 868,560 H32 Q0,560 0,528 V32 Q0,0 32,0 Z" fill="none" stroke="none" />
+        <!-- Brilho atrás da estrela -->
+        <g>
+          <circle r="22" fill="url(#star-glow)" opacity="0.85" filter="url(#blur)">
+            <animateMotion dur="5s" repeatCount="indefinite" orient="auto">
+              <mpath href="#spark-path" />
+            </animateMotion>
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="1.2s" repeatCount="indefinite" />
+            <animateTransform attributeName="transform" type="scale" values="1;1.25;1" dur="1.2s" repeatCount="indefinite" additive="sum" />
+          </circle>
+          <!-- Estrela maior -->
+          <polygon id="star" points="0,-12 3.54,-3.71 11.34,-3.71 4.81,1.41 7.72,9.14 0,4.58 -7.72,9.14 -4.81,1.41 -11.34,-3.71 -3.54,-3.71" fill="url(#spark-core)" opacity="0.98">
+            <animateMotion dur="5s" repeatCount="indefinite" orient="auto">
+              <mpath href="#spark-path" />
+            </animateMotion>
+          </polygon>
+        </g>
+        <defs>
+          <radialGradient id="spark-core" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff"/>
+            <stop offset="60%" stop-color="#4fc3f7"/>
+            <stop offset="100%" stop-color="#1976d2"/>
+          </radialGradient>
+          <radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
+            <stop offset="60%" stop-color="#4fc3f7" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="blur" x="-30" y="-30" width="60" height="60">
+            <feGaussianBlur stdDeviation="4" />
+          </filter>
+        </defs>
+      </svg>
+      <p><span>transforme</span><br><span>o mundo com a gente</span></p>
+    </section>
+    <section id="professional-challenges">
+      <h2>Evolua e encare novos desafios profissionais</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial-photo"></div>
+          <div class="testimonial-info">
+            <strong>Alfeu Silva</strong>
+            <span>Back-End Developer<br>Contratado por NTT Data</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-photo"></div>
+          <div class="testimonial-info">
+            <strong>Guilherme Reis</strong>
+            <span>Android Developer<br>Contratado por Inter</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-photo"></div>
+          <div class="testimonial-info">
+            <strong>Ana Guerra</strong>
+            <span>Software Engineer<br>Contratada por NTT Data</span>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-photo"></div>
+          <div class="testimonial-info">
+            <strong>Anna Maria</strong>
+            <span>Full-Stack Developer<br>Contratada por Avanade</span>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/professional-challenges.png" title="Homem lendo depoimentos em um tablet" alt="Homem lendo depoimentos em um tablet">
+      <p>
+        Junte-se ao nosso ecossistema e transforme o mundo com a gente! Todos os dias dezenas de empresas 
+        acessam a nossa plataforma em busca dos talentos mais criativos, dinâmicos e colaborativos, 
+        além do conhecimento técnico. 
+        A nossa missão é te preparar para que você conecte-se com as melhores oportunidades.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <img class="dio-logo" src="assets/images/dio-logo.png" title="Logotipo DIO com o texto make the change" alt="Logotipo DIO com o texto make the change">
+    <p>acesse <a href="https://dio.me">dio.me</a> e se cadastre agora</p>
+  </footer>
+  <script src="scroll-animations.js"></script>
+  <script>
+    // Script para tocar som ao passar o mouse na logo
+    const logoImg = document.querySelector('.logo img');
+    let logoAudio = new Audio('assets/images/som.mp3');
+    let isPlaying = false;
+
+    logoImg.addEventListener('mouseenter', () => {
+      if (!isPlaying) {
+        logoAudio.currentTime = 0;
+        logoAudio.play();
+        isPlaying = true;
+      }
+    });
+    logoImg.addEventListener('mouseleave', () => {
+      logoAudio.pause();
+      logoAudio.currentTime = 0;
+      isPlaying = false;
+    });
+    logoAudio.addEventListener('ended', () => {
+      isPlaying = false;
+    });
+  </script>
+</body>
+</html>
