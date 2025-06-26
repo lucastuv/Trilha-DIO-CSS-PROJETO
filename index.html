@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trilha de CSS - DIO</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="audio" href="assets/images/som.mp3" type="audio/mpeg">
 </head>
 <body>
   <header class="banner">
@@ -38,69 +39,39 @@
       </div>
     </section>
     <section id="transform-world">
-      <svg class="spark-svg" width="100%" height="560" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:560px;z-index:10;pointer-events:none;">
-        <rect x="0" y="0" width="900" height="560" rx="32" fill="none" stroke="#33A8DB" stroke-width="2" />
-        <path id="spark-path" d="M32,0 H868 Q900,0 900,32 V528 Q900,560 868,560 H32 Q0,560 0,528 V32 Q0,0 32,0 Z" fill="none" stroke="none" />
-        <!-- Brilho atrás da estrela -->
-        <g>
-          <circle r="22" fill="url(#star-glow)" opacity="0.85" filter="url(#blur)">
-            <animateMotion dur="5s" repeatCount="indefinite" orient="auto">
-              <mpath href="#spark-path" />
-            </animateMotion>
-            <animate attributeName="opacity" values="0.7;1;0.7" dur="1.2s" repeatCount="indefinite" />
-            <animateTransform attributeName="transform" type="scale" values="1;1.25;1" dur="1.2s" repeatCount="indefinite" additive="sum" />
-          </circle>
-          <!-- Estrela maior -->
-          <polygon id="star" points="0,-12 3.54,-3.71 11.34,-3.71 4.81,1.41 7.72,9.14 0,4.58 -7.72,9.14 -4.81,1.41 -11.34,-3.71 -3.54,-3.71" fill="url(#spark-core)" opacity="0.98">
-            <animateMotion dur="5s" repeatCount="indefinite" orient="auto">
-              <mpath href="#spark-path" />
-            </animateMotion>
-          </polygon>
-        </g>
-        <defs>
-          <radialGradient id="spark-core" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#fff"/>
-            <stop offset="60%" stop-color="#4fc3f7"/>
-            <stop offset="100%" stop-color="#1976d2"/>
-          </radialGradient>
-          <radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#fff" stop-opacity="1"/>
-            <stop offset="60%" stop-color="#4fc3f7" stop-opacity="0.7"/>
-            <stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/>
-          </radialGradient>
-          <filter id="blur" x="-30" y="-30" width="60" height="60">
-            <feGaussianBlur stdDeviation="4" />
-          </filter>
-        </defs>
-      </svg>
+      <div class="star-animada">
+        <svg width="14" height="14" viewBox="0 0 32 32">
+          <polygon points="16,2 20,12 31,12 22,19 25,30 16,23 7,30 10,19 1,12 12,12" fill="#33A8DB"/>
+        </svg>
+      </div>
       <p><span>transforme</span><br><span>o mundo com a gente</span></p>
     </section>
     <section id="professional-challenges">
       <h2>Evolua e encare novos desafios profissionais</h2>
       <div class="testimonials">
         <div class="testimonial">
-          <div class="testimonial-photo"></div>
+          <div class="testimonial-photo"><img src="assets/images/meme.gif" alt="Foto do depoente"></div>
           <div class="testimonial-info">
             <strong>Alfeu Silva</strong>
             <span>Back-End Developer<br>Contratado por NTT Data</span>
           </div>
         </div>
         <div class="testimonial">
-          <div class="testimonial-photo"></div>
+          <div class="testimonial-photo"><img src="assets/images/meme.gif" alt="Foto do depoente"></div>
           <div class="testimonial-info">
             <strong>Guilherme Reis</strong>
             <span>Android Developer<br>Contratado por Inter</span>
           </div>
         </div>
         <div class="testimonial">
-          <div class="testimonial-photo"></div>
+          <div class="testimonial-photo"><img src="assets/images/woman.gif" alt="Foto do depoente"></div>
           <div class="testimonial-info">
             <strong>Ana Guerra</strong>
             <span>Software Engineer<br>Contratada por NTT Data</span>
           </div>
         </div>
         <div class="testimonial">
-          <div class="testimonial-photo"></div>
+          <div class="testimonial-photo"><img src="assets/images/woman.gif" alt="Foto do depoente"></div>
           <div class="testimonial-info">
             <strong>Anna Maria</strong>
             <span>Full-Stack Developer<br>Contratada por Avanade</span>
@@ -124,8 +95,13 @@
   <script>
     // Script para tocar som ao passar o mouse na logo
     const logoImg = document.querySelector('.logo img');
+    // Pré-carrega o áudio para garantir execução instantânea
     let logoAudio = new Audio('assets/images/som.mp3');
+    logoAudio.preload = 'auto';
     let isPlaying = false;
+
+    // Garante que o áudio já esteja carregado
+    logoAudio.load();
 
     logoImg.addEventListener('mouseenter', () => {
       if (!isPlaying) {
